@@ -3,10 +3,10 @@ from __future__ import annotations
 import json
 import typer
 
-from qbanker.core.afford import affordability
-from qbanker.models.afford import AffordInput
-from qbanker.cli.renderers.afford import render_affordability
-from qbanker.cli.prompts import prompt_float
+from qfinancetools.core.afford import affordability
+from qfinancetools.models.afford import AffordInput
+from qfinancetools.cli.renderers.afford import render_affordability
+from qfinancetools.cli.prompts import prompt_float
 
 
 def afford_command(

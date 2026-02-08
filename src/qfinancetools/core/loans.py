@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from qbanker.models.loans import LoanInput, LoanResult, AmortizationRow
+from qfinancetools.models.loans import LoanInput, LoanResult, AmortizationRow
 
 
 def compute_monthly_payment(loan: LoanInput) -> float:

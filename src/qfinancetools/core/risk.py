@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import random
 
-from qbanker.models.risk import (
+from qfinancetools.models.risk import (
     ScenarioInput,
     ScenarioResult,
     SensitivityInput,

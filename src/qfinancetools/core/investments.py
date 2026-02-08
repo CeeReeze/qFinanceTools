@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from qbanker.models.investments import InvestmentInput, InvestmentResult
+from qfinancetools.models.investments import InvestmentInput, InvestmentResult
 
 
 def investment_growth(data: InvestmentInput) -> InvestmentResult:

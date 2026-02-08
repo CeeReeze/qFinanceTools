@@ -3,28 +3,28 @@ from __future__ import annotations
 import json
 import typer
 
-from qbanker.core.bonds import (
+from qfinancetools.core.bonds import (
     bond_price,
     bond_ytm,
     bond_duration,
     bond_convexity,
     bond_ladder,
 )
-from qbanker.models.bonds import (
+from qfinancetools.models.bonds import (
     BondPriceInput,
     BondYtmInput,
     BondDurationInput,
     BondConvexityInput,
     BondLadderInput,
 )
-from qbanker.cli.renderers.bonds import (
+from qfinancetools.cli.renderers.bonds import (
     render_bond_price,
     render_bond_ytm,
     render_bond_duration,
     render_bond_convexity,
     render_bond_ladder,
 )
-from qbanker.cli.prompts import prompt_float, prompt_int, prompt_list_int, prompt_list_float
+from qfinancetools.cli.prompts import prompt_float, prompt_int, prompt_list_int, prompt_list_float
 
 
 bonds_app = typer.Typer(no_args_is_help=True)

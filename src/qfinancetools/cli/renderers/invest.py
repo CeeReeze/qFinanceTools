@@ -3,7 +3,7 @@ from __future__ import annotations
 from rich.console import Console
 from rich.table import Table
 
-from qbanker.models.investments import InvestmentResult
+from qfinancetools.models.investments import InvestmentResult
 
 
 def render_investment_summary(result: InvestmentResult) -> None:

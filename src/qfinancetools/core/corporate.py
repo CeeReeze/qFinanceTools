@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import math
 
-from qbanker.models.corporate import (
+from qfinancetools.models.corporate import (
     WaccInput,
     WaccResult,
     CapmInput,

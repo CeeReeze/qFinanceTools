@@ -1,7 +1,7 @@
 import pytest
 
-from qbanker.core.corporate import wacc, capm, npv, irr, dcf, comps
-from qbanker.models.corporate import (
+from qfinancetools.core.corporate import wacc, capm, npv, irr, dcf, comps
+from qfinancetools.models.corporate import (
     WaccInput,
     CapmInput,
     NpvInput,

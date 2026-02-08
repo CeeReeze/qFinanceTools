@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from qbanker.models.afford import AffordInput, AffordResult
+from qfinancetools.models.afford import AffordInput, AffordResult
 
 
 def affordability(data: AffordInput) -> AffordResult:

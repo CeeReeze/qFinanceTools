@@ -3,10 +3,10 @@ from __future__ import annotations
 import json
 import typer
 
-from qbanker.core.loans import amortization_schedule, loan_summary
-from qbanker.models.loans import LoanInput
-from qbanker.cli.renderers.loan import render_loan_summary, render_amortization
-from qbanker.cli.prompts import prompt_float, prompt_int, prompt_bool
+from qfinancetools.core.loans import amortization_schedule, loan_summary
+from qfinancetools.models.loans import LoanInput
+from qfinancetools.cli.renderers.loan import render_loan_summary, render_amortization
+from qfinancetools.cli.prompts import prompt_float, prompt_int, prompt_bool
 
 
 def loan_command(

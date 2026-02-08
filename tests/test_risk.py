@@ -1,7 +1,7 @@
 import pytest
 
-from qbanker.core.risk import scenario, sensitivity, monte_carlo, stress_test
-from qbanker.models.risk import ScenarioInput, SensitivityInput, MonteCarloInput, StressTestInput
+from qfinancetools.core.risk import scenario, sensitivity, monte_carlo, stress_test
+from qfinancetools.models.risk import ScenarioInput, SensitivityInput, MonteCarloInput, StressTestInput
 
 
 def test_scenario() -> None:

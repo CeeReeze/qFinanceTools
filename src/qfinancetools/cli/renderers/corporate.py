@@ -3,7 +3,7 @@ from __future__ import annotations
 from rich.console import Console
 from rich.table import Table
 
-from qbanker.models.corporate import (
+from qfinancetools.models.corporate import (
     WaccResult,
     CapmResult,
     NpvResult,

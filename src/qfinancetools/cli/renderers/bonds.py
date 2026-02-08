@@ -3,7 +3,7 @@ from __future__ import annotations
 from rich.console import Console
 from rich.table import Table
 
-from qbanker.models.bonds import (
+from qfinancetools.models.bonds import (
     BondPriceResult,
     BondYtmResult,
     BondDurationResult,

@@ -1,7 +1,7 @@
 import pytest
 
-from qbanker.core.loans import compute_monthly_payment, loan_summary
-from qbanker.models.loans import LoanInput
+from qfinancetools.core.loans import compute_monthly_payment, loan_summary
+from qfinancetools.models.loans import LoanInput
 
 
 def test_monthly_payment_zero_rate() -> None:

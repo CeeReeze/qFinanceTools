@@ -1,7 +1,7 @@
 import pytest
 
-from qbanker.core.investments import investment_growth
-from qbanker.models.investments import InvestmentInput
+from qfinancetools.core.investments import investment_growth
+from qfinancetools.models.investments import InvestmentInput
 
 
 def test_investment_zero_rate() -> None:

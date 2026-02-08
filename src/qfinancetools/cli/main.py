@@ -3,7 +3,7 @@ from __future__ import annotations
 import importlib.metadata
 import typer
 
-from qbanker.cli.commands import loan, invest, afford, corporate, bonds, risk
+from qfinancetools.cli.commands import loan, invest, afford, corporate, bonds, risk
 
 app = typer.Typer(no_args_is_help=True)
 
@@ -13,12 +13,12 @@ def _version_callback(
     version: bool = typer.Option(
         False,
         "--version",
-        help="Show the qbanker version and exit.",
+        help="Show the qfin version and exit.",
         is_eager=True,
     )
 ) -> None:
     if version:
-        typer.echo(importlib.metadata.version("qbanker"))
+        typer.echo(importlib.metadata.version("qfinance"))
         raise typer.Exit()
 
 

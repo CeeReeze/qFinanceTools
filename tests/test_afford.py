@@ -1,5 +1,5 @@
-from qbanker.core.afford import affordability
-from qbanker.models.afford import AffordInput
+from qfinancetools.core.afford import affordability
+from qfinancetools.models.afford import AffordInput
 
 
 def test_affordability_thresholds() -> None:

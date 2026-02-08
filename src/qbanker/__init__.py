@@ -1,1 +1,0 @@
-"""qBanker package."""

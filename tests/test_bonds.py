@@ -1,7 +1,7 @@
 import pytest
 
-from qbanker.core.bonds import bond_price, bond_ytm, bond_duration, bond_convexity, bond_ladder
-from qbanker.models.bonds import (
+from qfinancetools.core.bonds import bond_price, bond_ytm, bond_duration, bond_convexity, bond_ladder
+from qfinancetools.models.bonds import (
     BondPriceInput,
     BondYtmInput,
     BondDurationInput,

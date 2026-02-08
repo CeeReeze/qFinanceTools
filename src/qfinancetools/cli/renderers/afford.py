@@ -3,7 +3,7 @@ from __future__ import annotations
 from rich.console import Console
 from rich.table import Table
 
-from qbanker.models.afford import AffordResult
+from qfinancetools.models.afford import AffordResult
 
 
 def render_affordability(result: AffordResult) -> None:

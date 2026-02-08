@@ -3,7 +3,7 @@ from __future__ import annotations
 from rich.console import Console
 from rich.table import Table
 
-from qbanker.models.loans import LoanResult, AmortizationRow
+from qfinancetools.models.loans import LoanResult, AmortizationRow
 
 
 def render_loan_summary(result: LoanResult) -> None:

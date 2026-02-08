@@ -1,5 +1,5 @@
 [project]
-name = "qbanker"
+name = "qfinance"
 version = "0.1.0"
 description = "Financial reasoning engine with CLI"
 readme = "README.md"
@@ -13,7 +13,7 @@ dependencies = [
 ]
 
 [project.scripts]
-qbanker = "qbanker.cli.main:app"
+qfin = "qfinancetools.cli.main:app"
 
 [build-system]
 requires = ["setuptools>=64"]

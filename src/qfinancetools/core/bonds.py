@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from qbanker.models.bonds import (
+from qfinancetools.models.bonds import (
     BondPriceInput,
     BondPriceResult,
     BondYtmInput,

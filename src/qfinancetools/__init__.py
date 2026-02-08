@@ -1,0 +1,1 @@
+"""qFinanceTool package."""

@@ -3,20 +3,20 @@ from __future__ import annotations
 import json
 import typer
 
-from qbanker.core.risk import scenario, sensitivity, monte_carlo, stress_test
-from qbanker.models.risk import (
+from qfinancetools.core.risk import scenario, sensitivity, monte_carlo, stress_test
+from qfinancetools.models.risk import (
     ScenarioInput,
     SensitivityInput,
     MonteCarloInput,
     StressTestInput,
 )
-from qbanker.cli.renderers.risk import (
+from qfinancetools.cli.renderers.risk import (
     render_scenario,
     render_sensitivity,
     render_monte_carlo,
     render_stress_test,
 )
-from qbanker.cli.prompts import prompt_float, prompt_int, prompt_list_float
+from qfinancetools.cli.prompts import prompt_float, prompt_int, prompt_list_float
 
 
 risk_app = typer.Typer(no_args_is_help=True)

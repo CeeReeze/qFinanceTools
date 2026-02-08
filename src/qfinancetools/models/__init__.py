@@ -1,7 +1,7 @@
-from qbanker.models.loans import LoanInput, LoanResult, AmortizationRow
-from qbanker.models.investments import InvestmentInput, InvestmentResult
-from qbanker.models.afford import AffordInput, AffordResult
-from qbanker.models.corporate import (
+from qfinancetools.models.loans import LoanInput, LoanResult, AmortizationRow
+from qfinancetools.models.investments import InvestmentInput, InvestmentResult
+from qfinancetools.models.afford import AffordInput, AffordResult
+from qfinancetools.models.corporate import (
     WaccInput,
     WaccResult,
     CapmInput,
@@ -15,7 +15,7 @@ from qbanker.models.corporate import (
     CompsInput,
     CompsResult,
 )
-from qbanker.models.bonds import (
+from qfinancetools.models.bonds import (
     BondPriceInput,
     BondPriceResult,
     BondYtmInput,
@@ -27,7 +27,7 @@ from qbanker.models.bonds import (
     BondLadderInput,
     BondLadderResult,
 )
-from qbanker.models.risk import (
+from qfinancetools.models.risk import (
     ScenarioInput,
     ScenarioResult,
     SensitivityInput,

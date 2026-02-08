@@ -2,7 +2,7 @@ import json
 
 from typer.testing import CliRunner
 
-from qbanker.cli.main import app
+from qfinancetools.cli.main import app
 
 
 runner = CliRunner()

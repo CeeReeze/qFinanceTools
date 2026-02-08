@@ -3,10 +3,10 @@ from __future__ import annotations
 import json
 import typer
 
-from qbanker.core.investments import investment_growth
-from qbanker.models.investments import InvestmentInput
-from qbanker.cli.renderers.invest import render_investment_summary
-from qbanker.cli.prompts import prompt_float, prompt_int
+from qfinancetools.core.investments import investment_growth
+from qfinancetools.models.investments import InvestmentInput
+from qfinancetools.cli.renderers.invest import render_investment_summary
+from qfinancetools.cli.prompts import prompt_float, prompt_int
 
 
 def invest_command(

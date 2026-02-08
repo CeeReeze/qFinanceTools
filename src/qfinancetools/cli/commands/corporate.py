@@ -3,8 +3,8 @@ from __future__ import annotations
 import json
 import typer
 
-from qbanker.core.corporate import wacc, capm, npv, irr, dcf, comps
-from qbanker.models.corporate import (
+from qfinancetools.core.corporate import wacc, capm, npv, irr, dcf, comps
+from qfinancetools.models.corporate import (
     WaccInput,
     CapmInput,
     NpvInput,
@@ -12,7 +12,7 @@ from qbanker.models.corporate import (
     DcfInput,
     CompsInput,
 )
-from qbanker.cli.renderers.corporate import (
+from qfinancetools.cli.renderers.corporate import (
     render_wacc,
     render_capm,
     render_npv,
@@ -20,7 +20,7 @@ from qbanker.cli.renderers.corporate import (
     render_dcf,
     render_comps,
 )
-from qbanker.cli.prompts import (
+from qfinancetools.cli.prompts import (
     prompt_float,
     prompt_list_float,
     prompt_optional_float,
