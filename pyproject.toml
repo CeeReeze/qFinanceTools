@@ -10,10 +10,13 @@ dependencies = [
   "pydantic",
   "pytest",
   "hypothesis",
+  "PySide6",
+  "matplotlib",
 ]
 
 [project.scripts]
 qfin = "qfinancetools.cli.main:app"
+qfin-gui = "qfinancetools.gui.app:main"
 
 [build-system]
 requires = ["setuptools>=64"]

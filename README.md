@@ -11,6 +11,14 @@ uv sync
 qfin --help
 ```
 
+## GUI
+
+Launch the desktop app:
+
+```bash
+qfin-gui
+```
+
 ## Examples
 
 ```bash

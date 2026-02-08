@@ -48,6 +48,7 @@ class MonteCarloResult(BaseModel):
     median: float
     p5: float
     p95: float
+    values: list[float]
 
 
 class StressTestInput(BaseModel):

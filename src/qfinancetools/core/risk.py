@@ -48,7 +48,7 @@ def monte_carlo(data: MonteCarloInput) -> MonteCarloResult:
     p5 = values[int(0.05 * (len(values) - 1))]
     p95 = values[int(0.95 * (len(values) - 1))]
 
-    return MonteCarloResult(mean=mean, median=median, p5=p5, p95=p95)
+    return MonteCarloResult(mean=mean, median=median, p5=p5, p95=p95, values=values)
 
 
 def stress_test(data: StressTestInput) -> StressTestResult:
