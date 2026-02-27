@@ -17,6 +17,22 @@ def render_loan_summary(result: LoanResult) -> None:
     table.add_row("Years", f"{result.years:.2f}")
 
     Console().print(table)
+    if result.warnings:
+        warnings = Table(title="Warnings")
+        warnings.add_column("Code")
+        warnings.add_column("Message")
+        for item in result.warnings:
+            warnings.add_row(item.code, item.message)
+        Console().print(warnings)
+    if result.explanation:
+        explain = Table(title="Explanation")
+        explain.add_column("Step")
+        explain.add_column("Formula")
+        explain.add_column("Value", justify="right")
+        for step in result.explanation.steps:
+            value = f"{step.value:,.6f}" if isinstance(step.value, float) else str(step.value)
+            explain.add_row(step.name, step.formula, value)
+        Console().print(explain)
 
 
 def render_amortization(rows: list[AmortizationRow]) -> None:

@@ -3,7 +3,19 @@ from __future__ import annotations
 import importlib.metadata
 import typer
 
-from qfinancetools.cli.commands import loan, invest, afford, corporate, bonds, risk
+from qfinancetools.cli.commands import (
+    loan,
+    invest,
+    afford,
+    corporate,
+    bonds,
+    risk,
+    compare,
+    timeline,
+    goal,
+    plugins,
+    stocks,
+)
 
 app = typer.Typer(no_args_is_help=True)
 
@@ -24,7 +36,12 @@ def _version_callback(
 
 app.command("loan")(loan.loan_command)
 app.command("invest")(invest.invest_command)
+app.command("stocks")(stocks.stocks_command)
 app.command("afford")(afford.afford_command)
+app.command("timeline")(timeline.timeline_command)
 app.add_typer(corporate.corporate_app, name="corporate")
 app.add_typer(bonds.bonds_app, name="bonds")
 app.add_typer(risk.risk_app, name="risk")
+app.add_typer(compare.compare_app, name="compare")
+app.add_typer(goal.goal_app, name="goal")
+app.add_typer(plugins.plugins_app, name="plugins")
