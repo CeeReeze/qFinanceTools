@@ -7,10 +7,15 @@ from PySide6 import QtCore, QtWidgets
 from qfinancetools.gui import theme
 from qfinancetools.gui.pages.afford_page import AffordPage
 from qfinancetools.gui.pages.bonds_page import BondsPage
+from qfinancetools.gui.pages.compare_page import ComparePage
 from qfinancetools.gui.pages.corporate_page import CorporatePage
+from qfinancetools.gui.pages.goal_page import GoalPage
 from qfinancetools.gui.pages.invest_page import InvestPage
 from qfinancetools.gui.pages.loan_page import LoanPage
+from qfinancetools.gui.pages.plugins_page import PluginsPage
 from qfinancetools.gui.pages.risk_page import RiskPage
+from qfinancetools.gui.pages.stocks_page import StocksPage
+from qfinancetools.gui.pages.timeline_page import TimelinePage
 
 
 class MainWindow(QtWidgets.QMainWindow):
@@ -42,17 +47,36 @@ class MainWindow(QtWidgets.QMainWindow):
 
         self.nav = QtWidgets.QListWidget()
         self.nav.setFixedWidth(200)
-        self.nav.addItems(["Loan", "Invest", "Afford", "Corporate", "Bonds", "Risk"])
+        self.nav.addItems(
+            [
+                "Loan",
+                "Invest",
+                "Stocks/ETF",
+                "Afford",
+                "Corporate",
+                "Bonds",
+                "Risk",
+                "Compare",
+                "Timeline",
+                "Goals",
+                "Plugins",
+            ]
+        )
         self.nav.currentRowChanged.connect(self._on_nav_changed)
 
         self.stack = QtWidgets.QStackedWidget()
         self.pages = [
             LoanPage(),
             InvestPage(),
+            StocksPage(),
             AffordPage(),
             CorporatePage(),
             BondsPage(),
             RiskPage(),
+            ComparePage(),
+            TimelinePage(),
+            GoalPage(),
+            PluginsPage(),
         ]
         for page in self.pages:
             self.stack.addWidget(page)

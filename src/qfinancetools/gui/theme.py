@@ -52,16 +52,54 @@ def app_stylesheet() -> str:
         color: #0f172a;
         font-weight: 600;
     }
-    QLineEdit, QDoubleSpinBox, QSpinBox {
+    QLineEdit, QDoubleSpinBox, QSpinBox, QDateEdit, QDateTimeEdit {
         background: #ffffff;
         border: 1px solid #e2e8f0;
         border-radius: 8px;
         padding: 6px 8px;
         selection-background-color: #0ea5e9;
     }
-    QLineEdit:focus, QDoubleSpinBox:focus, QSpinBox:focus {
+    QLineEdit:focus, QDoubleSpinBox:focus, QSpinBox:focus, QDateEdit:focus, QDateTimeEdit:focus {
         border: 1px solid #0ea5e9;
         background: #f0f9ff;
+    }
+    QDateEdit::drop-down, QDateTimeEdit::drop-down {
+        border: none;
+        width: 20px;
+    }
+    QDateEdit::down-arrow, QDateTimeEdit::down-arrow {
+        image: none;
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 6px solid #64748b;
+        margin-right: 6px;
+    }
+    QCalendarWidget QWidget {
+        alternate-background-color: #f8fafc;
+    }
+    QCalendarWidget QToolButton {
+        color: #0f172a;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 6px;
+        padding: 4px 6px;
+    }
+    QCalendarWidget QMenu {
+        background: #ffffff;
+        color: #0f172a;
+    }
+    QCalendarWidget QSpinBox {
+        background: #ffffff;
+        color: #0f172a;
+        selection-background-color: #0ea5e9;
+    }
+    QCalendarWidget QAbstractItemView:enabled {
+        color: #0f172a;
+        background: #ffffff;
+        selection-background-color: #0ea5e9;
+        selection-color: #ffffff;
     }
     QPushButton {
         background: #0ea5e9;
