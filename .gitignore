@@ -1,6 +1,7 @@
 # Python-generated files
 __pycache__/
 *.py[oc]
+*_cache/
 build/
 dist/
 wheels/
@@ -8,3 +9,7 @@ wheels/
 
 # Virtual environments
 .venv
+
+# agents
+AGENTS.md
+CLAUDE.md
