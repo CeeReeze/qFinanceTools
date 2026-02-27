@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pydantic import BaseModel, ConfigDict, Field
 
+from qfinancetools.models.explain import ExplanationBlock, WarningItem
 
 class WaccInput(BaseModel):
     model_config = ConfigDict(frozen=True)
@@ -17,6 +18,8 @@ class WaccResult(BaseModel):
     model_config = ConfigDict(frozen=True)
 
     wacc: float
+    warnings: list[WarningItem] = Field(default_factory=list)
+    explanation: ExplanationBlock | None = None
 
 
 class CapmInput(BaseModel):
@@ -31,6 +34,8 @@ class CapmResult(BaseModel):
     model_config = ConfigDict(frozen=True)
 
     cost_of_equity: float
+    warnings: list[WarningItem] = Field(default_factory=list)
+    explanation: ExplanationBlock | None = None
 
 
 class NpvInput(BaseModel):
@@ -44,6 +49,8 @@ class NpvResult(BaseModel):
     model_config = ConfigDict(frozen=True)
 
     npv: float
+    warnings: list[WarningItem] = Field(default_factory=list)
+    explanation: ExplanationBlock | None = None
 
 
 class IrrInput(BaseModel):
@@ -57,6 +64,8 @@ class IrrResult(BaseModel):
     model_config = ConfigDict(frozen=True)
 
     irr: float
+    warnings: list[WarningItem] = Field(default_factory=list)
+    explanation: ExplanationBlock | None = None
 
 
 class DcfInput(BaseModel):
@@ -74,6 +83,8 @@ class DcfResult(BaseModel):
     present_value: float
     terminal_value: float
     total_value: float
+    warnings: list[WarningItem] = Field(default_factory=list)
+    explanation: ExplanationBlock | None = None
 
 
 class CompsInput(BaseModel):
@@ -89,3 +100,5 @@ class CompsResult(BaseModel):
     low: float
     high: float
     median: float
+    warnings: list[WarningItem] = Field(default_factory=list)
+    explanation: ExplanationBlock | None = None

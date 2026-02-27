@@ -10,6 +10,11 @@ from qfinancetools.core.bonds import (
     bond_ladder,
 )
 from qfinancetools.core.risk import scenario, sensitivity, monte_carlo, stress_test
+from qfinancetools.core.comparison import compare_scenarios
+from qfinancetools.core.timeline import build_unified_timeline
+from qfinancetools.core.goals import solve_investment_goal, solve_loan_payoff_goal
+from qfinancetools.core.plugins import discover_plugins
+from qfinancetools.core.stocks import stock_projection, stock_history, stock_backtest
 
 __all__ = [
     "compute_monthly_payment",
@@ -32,4 +37,12 @@ __all__ = [
     "sensitivity",
     "monte_carlo",
     "stress_test",
+    "compare_scenarios",
+    "build_unified_timeline",
+    "solve_investment_goal",
+    "solve_loan_payoff_goal",
+    "discover_plugins",
+    "stock_projection",
+    "stock_history",
+    "stock_backtest",
 ]

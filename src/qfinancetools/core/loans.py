@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 from qfinancetools.models.loans import LoanInput, LoanResult, AmortizationRow
+from qfinancetools.core.explainability import loan_explanation
+from qfinancetools.core.guardrails import loan_warnings
 
 
 def compute_monthly_payment(loan: LoanInput) -> float:
@@ -58,10 +60,14 @@ def loan_summary(loan: LoanInput) -> LoanResult:
     total_interest = sum(row.interest for row in schedule)
     years = len(schedule) / 12
     monthly_payment = compute_monthly_payment(loan)
+    warnings = loan_warnings(loan.principal, loan.annual_rate, loan.years, loan.extra_payment)
+    explanation = loan_explanation(loan.principal, loan.annual_rate, loan.years, monthly_payment)
 
     return LoanResult(
         monthly_payment=monthly_payment,
         total_interest=total_interest,
         total_paid=total_paid,
         years=years,
+        warnings=warnings,
+        explanation=explanation,
     )

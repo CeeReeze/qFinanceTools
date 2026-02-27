@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from pydantic import BaseModel, ConfigDict, Field
 
+from qfinancetools.models.explain import ExplanationBlock, WarningItem
+
 
 class BondPriceInput(BaseModel):
     model_config = ConfigDict(frozen=True)
@@ -17,6 +19,8 @@ class BondPriceResult(BaseModel):
     model_config = ConfigDict(frozen=True)
 
     price: float
+    warnings: list[WarningItem] = Field(default_factory=list)
+    explanation: ExplanationBlock | None = None
 
 
 class BondYtmInput(BaseModel):
@@ -34,6 +38,8 @@ class BondYtmResult(BaseModel):
     model_config = ConfigDict(frozen=True)
 
     yield_rate: float
+    warnings: list[WarningItem] = Field(default_factory=list)
+    explanation: ExplanationBlock | None = None
 
 
 class BondDurationInput(BaseModel):
@@ -51,6 +57,8 @@ class BondDurationResult(BaseModel):
 
     macaulay_duration: float
     modified_duration: float
+    warnings: list[WarningItem] = Field(default_factory=list)
+    explanation: ExplanationBlock | None = None
 
 
 class BondConvexityInput(BaseModel):
@@ -67,6 +75,8 @@ class BondConvexityResult(BaseModel):
     model_config = ConfigDict(frozen=True)
 
     convexity: float
+    warnings: list[WarningItem] = Field(default_factory=list)
+    explanation: ExplanationBlock | None = None
 
 
 class BondLadderInput(BaseModel):
@@ -82,3 +92,5 @@ class BondLadderResult(BaseModel):
     total_invested: float
     weighted_maturity: float
     schedule: list[tuple[int, float]]
+    warnings: list[WarningItem] = Field(default_factory=list)
+    explanation: ExplanationBlock | None = None

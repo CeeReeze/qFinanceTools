@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
+from qfinancetools.models.explain import ExplanationBlock, WarningItem
+
 
 class LoanInput(BaseModel):
     model_config = ConfigDict(frozen=True)
@@ -19,6 +21,8 @@ class LoanResult(BaseModel):
     total_interest: float
     total_paid: float
     years: float
+    warnings: list[WarningItem] = Field(default_factory=list)
+    explanation: ExplanationBlock | None = None
 
 
 class AmortizationRow(BaseModel):

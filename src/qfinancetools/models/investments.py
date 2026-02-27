@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from pydantic import BaseModel, ConfigDict, Field
 
+from qfinancetools.models.explain import ExplanationBlock, WarningItem
+
 
 class InvestmentInput(BaseModel):
     model_config = ConfigDict(frozen=True)
@@ -19,3 +21,5 @@ class InvestmentResult(BaseModel):
     total_contributions: float
     total_growth: float
     years: float
+    warnings: list[WarningItem] = Field(default_factory=list)
+    explanation: ExplanationBlock | None = None

@@ -37,6 +37,41 @@ from qfinancetools.models.risk import (
     StressTestInput,
     StressTestResult,
 )
+from qfinancetools.models.explain import WarningItem, FormulaStep, ExplanationBlock
+from qfinancetools.models.comparison import (
+    ComparisonCase,
+    ComparisonRequest,
+    ComparisonDelta,
+    ComparisonResult,
+)
+from qfinancetools.models.timeline import (
+    TimelineRequest,
+    TimelinePoint,
+    TimelineSeries,
+    TimelineResult,
+)
+from qfinancetools.models.goals import (
+    InvestmentGoalInput,
+    InvestmentGoalResult,
+    LoanPayoffGoalInput,
+    LoanPayoffGoalResult,
+)
+from qfinancetools.models.plugins import (
+    PluginCapability,
+    PluginMeta,
+    PluginRegistrySnapshot,
+)
+from qfinancetools.models.stocks import (
+    StockProjectionInput,
+    StockProjectionResult,
+    StockHistoryInput,
+    StockHistoryPoint,
+    StockHistorySeries,
+    StockHistoryResult,
+    StockBacktestInput,
+    StockBacktestPoint,
+    StockBacktestResult,
+)
 
 __all__ = [
     "LoanInput",
@@ -76,4 +111,31 @@ __all__ = [
     "MonteCarloResult",
     "StressTestInput",
     "StressTestResult",
+    "WarningItem",
+    "FormulaStep",
+    "ExplanationBlock",
+    "ComparisonCase",
+    "ComparisonRequest",
+    "ComparisonDelta",
+    "ComparisonResult",
+    "TimelineRequest",
+    "TimelinePoint",
+    "TimelineSeries",
+    "TimelineResult",
+    "InvestmentGoalInput",
+    "InvestmentGoalResult",
+    "LoanPayoffGoalInput",
+    "LoanPayoffGoalResult",
+    "PluginCapability",
+    "PluginMeta",
+    "PluginRegistrySnapshot",
+    "StockProjectionInput",
+    "StockProjectionResult",
+    "StockHistoryInput",
+    "StockHistoryPoint",
+    "StockHistorySeries",
+    "StockHistoryResult",
+    "StockBacktestInput",
+    "StockBacktestPoint",
+    "StockBacktestResult",
 ]

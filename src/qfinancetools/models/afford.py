@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from pydantic import BaseModel, ConfigDict, Field
 
+from qfinancetools.models.explain import ExplanationBlock, WarningItem
+
 
 class AffordInput(BaseModel):
     model_config = ConfigDict(frozen=True)
@@ -20,3 +22,5 @@ class AffordResult(BaseModel):
     current_dti: float
     stressed_dti: float
     affordable: bool
+    warnings: list[WarningItem] = Field(default_factory=list)
+    explanation: ExplanationBlock | None = None

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from qfinancetools.core.guardrails import bonds_warnings
 from qfinancetools.models.bonds import (
     BondPriceInput,
     BondPriceResult,
@@ -24,7 +25,8 @@ def bond_price(data: BondPriceInput) -> BondPriceResult:
         price += coupon / ((1 + rate) ** t)
     price += data.face_value / ((1 + rate) ** periods)
 
-    return BondPriceResult(price=price)
+    warnings = bonds_warnings(yield_rate=data.yield_rate, coupon_rate=data.coupon_rate, years=data.years)
+    return BondPriceResult(price=price, warnings=warnings)
 
 
 def bond_ytm(data: BondYtmInput) -> BondYtmResult:
@@ -39,13 +41,15 @@ def bond_ytm(data: BondYtmInput) -> BondYtmResult:
             price += coupon / ((1 + mid) ** t)
         price += data.face_value / ((1 + mid) ** periods)
         if abs(price - data.price) < 1e-8:
-            return BondYtmResult(yield_rate=mid * data.payments_per_year * 100)
+            warnings = bonds_warnings(coupon_rate=data.coupon_rate, years=data.years)
+            return BondYtmResult(yield_rate=mid * data.payments_per_year * 100, warnings=warnings)
         if price > data.price:
             low = mid
         else:
             high = mid
 
-    return BondYtmResult(yield_rate=mid * data.payments_per_year * 100)
+    warnings = bonds_warnings(coupon_rate=data.coupon_rate, years=data.years)
+    return BondYtmResult(yield_rate=mid * data.payments_per_year * 100, warnings=warnings)
 
 
 def bond_duration(data: BondDurationInput) -> BondDurationResult:
@@ -66,7 +70,8 @@ def bond_duration(data: BondDurationInput) -> BondDurationResult:
     macaulay = weighted_sum / pv_total / data.payments_per_year
     modified = macaulay / (1 + data.yield_rate / 100 / data.payments_per_year)
 
-    return BondDurationResult(macaulay_duration=macaulay, modified_duration=modified)
+    warnings = bonds_warnings(yield_rate=data.yield_rate, coupon_rate=data.coupon_rate, years=data.years)
+    return BondDurationResult(macaulay_duration=macaulay, modified_duration=modified, warnings=warnings)
 
 
 def bond_convexity(data: BondConvexityInput) -> BondConvexityResult:
@@ -87,7 +92,8 @@ def bond_convexity(data: BondConvexityInput) -> BondConvexityResult:
 
     convexity = convex_sum / (pv_total * (1 + rate) ** 2) / (data.payments_per_year**2)
 
-    return BondConvexityResult(convexity=convexity)
+    warnings = bonds_warnings(yield_rate=data.yield_rate, coupon_rate=data.coupon_rate, years=data.years)
+    return BondConvexityResult(convexity=convexity, warnings=warnings)
 
 
 def bond_ladder(data: BondLadderInput) -> BondLadderResult:
@@ -108,4 +114,5 @@ def bond_ladder(data: BondLadderInput) -> BondLadderResult:
         total_invested=total,
         weighted_maturity=weighted / total,
         schedule=schedule,
+        warnings=bonds_warnings(years=max(data.maturities)),
     )
